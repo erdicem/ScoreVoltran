@@ -32,9 +32,9 @@ class GameViewController: UIViewController {
         
         userName.text = UserDefaults.standard.string(forKey: UserDefaultKeys.userName.rawValue)
         
-         let totalScore = UserDefaults.standard.object(forKey: "highScore")
-        highScore = totalScore as! Int
-        self.highScoreLabel.text = "High Score: \(totalScore!)"
+        let totalScore = (UserDefaults.standard.object(forKey: "highScore") != nil) ? 0: 0
+        highScore = totalScore
+        self.highScoreLabel.text = "High Score: \(totalScore)"
         
         self.timeLeftLabel.text = "Time Left : \(counter)"
         
